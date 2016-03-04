@@ -19,6 +19,10 @@ app.controller('FilmController', function($scope){
 */
 
 //Question 1 - Finish the function called filmCount so it will return the total number of films in the array
+$scope.removeFilm = function($index){
+    $scope.films.splice($index, 1);
+}
+
 $scope.filmCount = function() {
     return $scope.films.length;
 }

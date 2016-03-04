@@ -1,0 +1,31 @@
+<html ng-app="MasterController">
+<head>
+    <meta charset="UTF-8">
+    <title>Film Manager</title>
+</head>
+<body ng-controller="FilmController as fc">
+    <div>
+        <ul>
+            <li ng-repeat="film in films">{{film.name}} --produced in: {{film.year}} <span class="badge">x</span></li>
+        </ul>
+    </div>
+    <button ng-click="addFilms()">Add New Movies</button>
+    <button ng-click="removeDups()">Remove Duplicates</button>
+    <button ng-click="sortByYear()">Sort by Date</button>
+    <button ng-click="date-form=true">List Within Date Range</button>
+    <form ng-show="date-form" ng-submit="findReleasesWithin()">
+   <label for="start-date">
+    <input name="start-date" type="number" ng-model="start">
+   <label for="end-date">
+        <input name="end-date" type="number" ng-model="end">
+        <button ng-click="date-form=false">Submit</button>
+    </form>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/filmController.js"></script>
+    <!--<script src="app/assessment2.js"></script>-->
+    <!--<script src="app/films.js"></script>-->
+    {{2+2}}
+</body>
+</html>
